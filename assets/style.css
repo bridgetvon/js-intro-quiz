@@ -1,0 +1,40 @@
+body {
+    color: dodgerblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+h1 {
+    text-align: center;
+    color: dodgerblue;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li {
+    text-decoration: none;
+    list-style-type: none;
+    overflow: auto;
+}
+
+li {
+    display: inline; 
+}
+
+#start {
+    display: flex;
+    margin: auto;
+}
+
+.timer {
+    justify-content: left;
+}
+
+.answer-choice {
+    display: block;
+    padding: 1%;
+}
