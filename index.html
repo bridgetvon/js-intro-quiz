@@ -8,6 +8,7 @@
   </head>
 
   <body>
+    <div>
       <nav>
           <ul>
               <li>Timer</li>
@@ -17,24 +18,24 @@
             <li class="highScore">View Highscores</li>
           </ul>
       </nav>
-      
+    </div>
 
-      <div class="quiz-start">
+
+      <div id="quiz-start">
       <h1>Intro to JS Coding Quiz</h1>
       <button id="start" class="btn">Start Quiz</button>
       </div>
     
-    </div>
-
-      <div class="questions">
+      <div class="questions hidden" id="questions">
+          <p id="question"></p>
       <div class="options">
           <button class="answer-choice" id="a"></button>
           <button class="answer-choice" id="b"></button>
           <button class="answer-choice" id="c"></button>
           <button class="answer-choice" id="d"></button>
-
       </div>
-</div>
+    </div>
+
       <script src="assets/script.js"></script>
 <!--function to hide this and start timer-->
   </body>

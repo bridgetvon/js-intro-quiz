@@ -1,3 +1,5 @@
+
+
 body {
     color: dodgerblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -37,4 +39,18 @@ li {
 .answer-choice {
     display: block;
     padding: 1%;
+}
+
+#start {
+    border-radius: 40%;
+    color: dodgerblue;
+    background-color: #fff;
+}
+
+.highscore {
+    justify-content: left;
+}
+
+.hidden {
+    display: none;
 }
