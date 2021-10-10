@@ -15,7 +15,7 @@
               <div id="timer">
                   <span id="seconds">60</span>
               </div>
-            <li class="highScore">View Highscores</li>
+            <li class="highScore" id="end">View Highscores</li>
           </ul>
       </nav>
     </div>
@@ -34,6 +34,14 @@
           <button class="answer-choice" id="c"></button>
           <button class="answer-choice" id="d"></button>
       </div>
+    </div>
+
+    <div class="hidden" id="score-page">
+        <h1>Highscores</h1>
+        <form>
+            <input id="saved-store" type="text" name="name">
+            <div id = "#write"></div>
+        </form>
     </div>
 
       <script src="assets/script.js"></script>

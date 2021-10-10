@@ -54,3 +54,7 @@ li {
 .hidden {
     display: none;
 }
+
+#questions {
+    justify-content: center;
+}

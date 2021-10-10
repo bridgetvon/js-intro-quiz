@@ -21,7 +21,7 @@ function updateCountdown () {
     } else {
         countDownEl.textContent = '';
         clearInterval(timeInterval);
-        displayMessage();
+        displayMessage("You are out of time!");
     }
  }, 1000);
 
@@ -58,16 +58,55 @@ var codeQuestions = [
         correct: 'd'
     },
     {
-        question: "who am I",
+        question: "Who am I?",
         answers: {
             a: 'dog',
             b: 'cat',
-            c: 'perdson',
+            c: 'person',
             d: 'computer',
         },
         correct: 'c'
-
-    }
+    },
+    {
+        question: "How do you call a function?",
+        answers: {
+            a: 'call function()',
+            b: 'display function',
+            c: 'function',
+            d: 'function()',
+        },
+        correct: 'd'
+    },
+    {
+        question: "Is JavaScript client side or server side?",
+        answers: {
+            a: 'client',
+            b: 'neither',
+            c: 'server',
+            d: 'both',
+        },
+        correct: 'a',
+    },
+    {
+        question: "which is not a JavaScript data type?",
+        answers: {
+            a: 'boolian',
+            b: 'string',
+            c: 'number',
+            d: 'loop',
+        },
+        correct: 'd',
+    },
+    {
+        question: "What does this keyword refer to?",
+        answers: {
+            a: 'the javaScript',
+            b: 'the website',
+            c: 'the object',
+            d: 'the user',
+        },
+        correct: 'c',
+    },
 ];
 
 //function to display code questions 
@@ -93,6 +132,7 @@ function changeQuestion (event) {
     if (event.target.id == codeQuestions[questionIndex].correct) {
         score++
         console.log(score);
+        localStorage.setItem('highscore', score);
     }
    
     questionIndex++;
@@ -102,7 +142,8 @@ function changeQuestion (event) {
         //display an element hide ending page element.classlist.remove. class hidden 
     }
 
-    console.log("1",questionIndex);
+
+console.log("1",questionIndex);
 console.log(codeQuestions[1].answers.a);
 console.log(codeQuestions[questionIndex].answers.a);
 console.log(choices);
@@ -113,6 +154,39 @@ choices[2].innerHTML = codeQuestions[questionIndex].answers.c;
 choices[3].innerHTML = codeQuestions[questionIndex].answers.d;
 
 };
+
+//once quiz is finsihed get items from local storage and display highschore page 
+
+var scorePage = document.getElementById('score-page');
+var scoreStore = [];
+var saved = document.getElementById('saved-store');
+var inputSave = savedScore.value;
+
+
+/*function highScores () {
+    if (questionIndex == codeQuestions.length) {
+    document.getElementById('score-page');
+    title.classList.add('hidden');
+    document.getElementById('score').innerHTML = localStorage.getItem("score");
+    window.localStorage.setItem("score");
+    }
+    
+};
+
+highScores();*/
+
+function highScores () {
+    if (saved ==null || save == "") {
+        document.getElementById('write').innerHTML = "nothing to store"; 
+    }else {
+        scoreStore.push('inputSave');
+       inputSave.value= "";
+       window.localStorage.setItem("score", scoreStore.join(" "));
+    }
+    };
+
+
+
 
 
 
