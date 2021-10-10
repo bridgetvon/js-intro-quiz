@@ -9,7 +9,7 @@ A timed quiz about JavaScript basics that keeps track of the users score and sav
 * HTML
 * CSS
 
-#Website
+# Website
 * https://bridgetvon.github.io/js-intro-quiz/
 
 <img src="./assets./websitephoto.png"> 

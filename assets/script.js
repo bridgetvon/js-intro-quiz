@@ -142,7 +142,6 @@ function changeQuestion (event) {
         //display an element hide ending page element.classlist.remove. class hidden 
     }
 
-
 console.log("1",questionIndex);
 console.log(codeQuestions[1].answers.a);
 console.log(codeQuestions[questionIndex].answers.a);
@@ -163,9 +162,9 @@ var saved = document.getElementById('saved-store');
 var inputSave = savedScore.value;
 
 
-/*function highScores () {
+function highScores () {
     if (questionIndex == codeQuestions.length) {
-    document.getElementById('score-page');
+    
     title.classList.add('hidden');
     document.getElementById('score').innerHTML = localStorage.getItem("score");
     window.localStorage.setItem("score");
@@ -173,17 +172,6 @@ var inputSave = savedScore.value;
     
 };
 
-highScores();*/
-
-function highScores () {
-    if (saved ==null || save == "") {
-        document.getElementById('write').innerHTML = "nothing to store"; 
-    }else {
-        scoreStore.push('inputSave');
-       inputSave.value= "";
-       window.localStorage.setItem("score", scoreStore.join(" "));
-    }
-    };
 
 
 
