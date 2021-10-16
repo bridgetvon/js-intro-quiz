@@ -7,9 +7,10 @@ var score = 0;
 //on start quiz button click, start timer and hide welcome page 
 var startButton = document.querySelector('button');
 var countDownEl = document.getElementById('seconds');
+var timeLeft = 30;
 
 function updateCountdown () {
- var timeLeft = 60;
+ //var timeLeft = 30;
 
  var timeInterval = setInterval(function() {
      if (timeLeft > 1) {
@@ -25,10 +26,12 @@ function updateCountdown () {
     }
  }, 1000);
 
+ 
  title.classList.add('hidden');
  quizQuestions.classList.remove('hidden');
  updateQuestion();
-}
+
+};
 //update so that if a question is wrong more time is subtracted 
 //if timer hits zero quiz needs to end 
 
@@ -140,7 +143,7 @@ function changeQuestion (event) {
     }
    
     questionIndex++;
-    if (questionIndex == codeQuestions.length) {
+    if (questionIndex == codeQuestions.length || timeLeft === 0) {
         alert("End of quiz:" + score)
         var scorePage = document.getElementById("score-page");
         scorePage.classList.remove("hidden");
@@ -166,12 +169,11 @@ choices[3].innerHTML = codeQuestions[questionIndex].answers.d;
 
 var scorePage = document.getElementById('score-page');
 var saved = document.getElementById('saved-store');
-const scores = JSON.parse(localStorage.getItem("score")) || [];
+//const scores = JSON.parse(localStorage.getItem("score")) || [];
 
 
 
-function highScore () {
-    console.log("highscore is working");
+function highScore (data) {
     var initials = document.getElementById("saved-score").value;
     var obj = {
         name: initials, 
@@ -187,8 +189,7 @@ function highScore () {
 
     console.log(data);
     data.push(obj);
-        console.log(highscore);
-  //  highscore.push(obj);
+
 
     localStorage.setItem('highscore', JSON.stringify(data));
     };

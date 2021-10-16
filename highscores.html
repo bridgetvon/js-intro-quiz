@@ -9,10 +9,24 @@
 
   <body>
     <div class="hidden" id="score-page">
-        <h1>Highscores</h1>
-        <form>
-            <input id="saved-store" type="text" name="name">
-            <div id = "#write"></div>
-        </form>
-    </div>
+      <h1>Save score</h1>
+      <form>
+          <input id="saved-score" type="text" name="name">
+          <div id = "write"></div>
+      </form>
+      <button id="save">
+        save
+      </button>
+  </div>
+
+  <div class="saved hidden">
+    <h3>Highscores</h3>
+    <ul id="score-list">
+
+    </ul>
+    <p id="testing"></p>
+    <button onClick="window.location.reload();">Retake Quiz</button>
+  </div>
+
+  <script src="./highscores.js"></script>
   </body>
