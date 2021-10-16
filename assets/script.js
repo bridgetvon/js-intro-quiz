@@ -202,6 +202,7 @@ function highScore (data) {
     document.body.appendChild(li);
    
   };
+
  // scorePage.classList.remove("hidden");
   //loop local storage and create an li element for each itemn append child within the loop 
   // remove hidden from highscore list when clicked 

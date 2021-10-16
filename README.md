@@ -3,14 +3,13 @@
 # Intro to Javascript Quiz
 
 ## Purpose 
-A timed quiz about JavaScript basics that keeps track of the users score and saves the scopre to local storage. 
+A timed quiz about JavaScript basics that keeps track of the users score and saves the score to local storage. 
 
 ### Built with
 * JavaScript
 * HTML
-* CSS
+* CSSupodates
 
 # Website
 * https://bridgetvon.github.io/js-intro-quiz/
 
-<img src="./assets./websitephoto.png"> 
