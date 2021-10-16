@@ -15,7 +15,9 @@
               <div id="timer">
                   <span id="seconds">60</span>
               </div>
-            <li class="highScore" id="end">View Highscores</li>
+            <li>
+              <a href="score-list">Highscores</a>
+            </li>
           </ul>
       </nav>
     </div>
@@ -37,13 +39,25 @@
     </div>
 
     <div class="hidden" id="score-page">
-        <h1>Highscores</h1>
+        <h1>Save score</h1>
         <form>
-            <input id="saved-store" type="text" name="name">
-            <div id = "#write"></div>
+            <input id="saved-score" type="text" name="name">
+            <div id = "write"></div>
         </form>
+        <button id="save">
+          save
+        </button>
     </div>
 
+    <div class="saved hidden">
+      <h3>Highscores</h3>
+      <ul id="score-list">
+
+      </ul>
+      <p id="testing"></p>
+      <button onClick="window.location.reload();">Retake Quiz</button>
+    </div>
+
+
       <script src="assets/script.js"></script>
-<!--function to hide this and start timer-->
   </body>

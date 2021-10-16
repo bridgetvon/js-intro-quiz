@@ -21,7 +21,7 @@ function updateCountdown () {
     } else {
         countDownEl.textContent = '';
         clearInterval(timeInterval);
-        displayMessage("You are out of time!");
+        window.alert("You are out of time!");
     }
  }, 1000);
 
@@ -29,6 +29,8 @@ function updateCountdown () {
  quizQuestions.classList.remove('hidden');
  updateQuestion();
 }
+//update so that if a question is wrong more time is subtracted 
+//if timer hits zero quiz needs to end 
 
 
 
@@ -122,30 +124,35 @@ choices[1].innerHTML = codeQuestions[0].answers.b
 choices[2].innerHTML = codeQuestions[0].answers.c
 choices[3].innerHTML = codeQuestions[0].answers.d
 
+
+
+
 for (i=0; i<4; i++) {
     choices[i].addEventListener("click", changeQuestion);
 }
 };
-
+var highscore = [];
 function changeQuestion (event) {
 
     if (event.target.id == codeQuestions[questionIndex].correct) {
         score++
         console.log(score);
-        localStorage.setItem('highscore', score);
     }
    
     questionIndex++;
     if (questionIndex == codeQuestions.length) {
         alert("End of quiz:" + score)
-        return;
-        //display an element hide ending page element.classlist.remove. class hidden 
-    }
+        var scorePage = document.getElementById("score-page");
+        scorePage.classList.remove("hidden");
+       // highScore();
 
-console.log("1",questionIndex);
-console.log(codeQuestions[1].answers.a);
-console.log(codeQuestions[questionIndex].answers.a);
-console.log(choices);
+        return;
+        
+    }
+    
+
+    quizQuestions.classList.remove('questions'); 
+
 singleQuestion.innerHTML = codeQuestions[questionIndex].question;
 choices[0].innerHTML = codeQuestions[questionIndex].answers.a;
 choices[1].innerHTML = codeQuestions[questionIndex].answers.b;
@@ -154,48 +161,54 @@ choices[3].innerHTML = codeQuestions[questionIndex].answers.d;
 
 };
 
+
 //once quiz is finsihed get items from local storage and display highschore page 
 
 var scorePage = document.getElementById('score-page');
-var scoreStore = [];
 var saved = document.getElementById('saved-store');
-var inputSave = savedScore.value;
+const scores = JSON.parse(localStorage.getItem("score")) || [];
 
 
-function highScores () {
-    if (questionIndex == codeQuestions.length) {
-    
-    title.classList.add('hidden');
-    document.getElementById('score').innerHTML = localStorage.getItem("score");
-    window.localStorage.setItem("score");
+
+function highScore () {
+    console.log("highscore is working");
+    var initials = document.getElementById("saved-score").value;
+    var obj = {
+        name: initials, 
+        score: score
     }
-    
+    var data = JSON.parse(localStorage.getItem("highscore"));
+
+    if (data == null) {
+        
+        highscore.push(obj);
+        localStorage.setItem('highscore', JSON.stringify(highscore));
+    } else {
+
+    console.log(data);
+    data.push(obj);
+        console.log(highscore);
+  //  highscore.push(obj);
+
+    localStorage.setItem('highscore', JSON.stringify(data));
+    };
+    var list = document.getElementById('testing');
+  
+  //display highscores 
+  for (var i=0; i < localStorage.length; i++) {
+    var li = document.createElement('li');
+    li.innerHTML = ('highscore', JSON.stringify(data));
+    document.body.appendChild(li);
+   
+  };
+ // scorePage.classList.remove("hidden");
+  //loop local storage and create an li element for each itemn append child within the loop 
+  // remove hidden from highscore list when clicked 
+
 };
 
 
+var saveButton = document.getElementById("save");
+saveButton.addEventListener("click", highScore);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Once timer is started display quiz questions, these need to be able to be clicked and answers saved 
-// Declare variable for quiz questions 
-
-
-
-// fucntion to generate quiz
 
